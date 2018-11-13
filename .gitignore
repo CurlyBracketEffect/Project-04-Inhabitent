@@ -1,20 +1,3 @@
-# Ignore everything in "wp-content" except these directories. #
-/*
-!.gitignore
-!plugins/
-!themes/
-!uploads/
-!README.md
-# Ignore everything in "plugins" except certain plugins. #
-plugins/*
-!plugins/inhabitent-functionality/
-!plugins/business-hours-widget/
-# Ignore everything in "themes" except the active theme. #
-themes/*
-!themes/inhabitent/
-# Ignore packages #
-themes/inhabitent/node_modules/
-
 # Ignore OS files #
 .DS_Store
 .DS_Store?
@@ -30,3 +13,21 @@ ehthumbs.db
 *.sqlite
 error_log
 access_log
+
+# Ignored inside the wp-content folder#
+/*
+!.gitignore
+!plugins/
+!themes/
+!uploads/
+!README.md
+# Ignore everything in "plugins" except certain plugins. #
+plugins/*
+!plugins/inhabitant-functionality/
+!plugins/business-hours-widget/
+# Ignore everything in "themes" except the active theme. #
+themes/*
+!themes/inhabitant-theme/
+# Ignore packages #
+themes/inhabitant-theme/node_modules/
+
