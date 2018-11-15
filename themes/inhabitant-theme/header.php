@@ -1,7 +1,4 @@
 <?php
-include 'JorrinFunctions.php';
-?>
-<?php
 /**
  * The header for our theme.
  *
@@ -24,38 +21,18 @@ include 'JorrinFunctions.php';
 			<a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( 'Skip to content' ); ?></a>
 
 			<header id="masthead" class="site-header" role="banner">
-				<div class="site-branding">
-					<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-				</div><!-- .site-branding -->
-
-				<?php 
-				$best_variable = 1;
-				$less_than = "less than 10";
-				$more_than = "more than 10";
-				$url = "https://redacademy.com/content/uploads/2017/07/RED-Logos-RGB-03-cropped-1.svg";
-				$func_return = my_link($url);
-
-				if ( $best_variable < 10 ) {
-					echo '<p>' . $less_than . '</p>';
-				}else if( $best_variable > 10 ){
-					echo '<p>' . $more_than . '</p>'; 
-				}
-				// echo "<img src = \"$url\" >";
-				echo "<img src = $func_return >";
-
-
-				// function my_link( $link ){
-				// 	return "\"$link\"";
-				// }
-				
-
-												?>
-
+				<div id="nav-bar" >
+				<div id="logo-container">	
+					<a href="http://localhost:3000/wordpress/">
+					<h1 class= "site-title">Inhabitent</h1>	
+				</a>
+				<!-- <img id="logo-img" src="<?php echo get_template_directory_uri(); ?>/inhabitant-assets/images/logos/inhabitent-logo-tent-white.svg"/> -->
+				</div>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html( 'Primary Menu' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
+				</div>
 			</header><!-- #masthead -->
 
 			<div id="content" class="site-content">
