@@ -225,6 +225,18 @@ th {
 /*--------------------------------------------------------------
 # Embedded Fonts
 --------------------------------------------------------------*/
+@font-face {
+  font-family: "Merriweather-bold";
+  src: url("../inhabitant-assets/fonts/Merriweather/Merriweather-Bold.ttf"); }
+
+@font-face {
+  font-family: "Merriweather-light";
+  src: url("../inhabitant-assets/fonts/Merriweather/Merriweather-Light.ttf"); }
+
+@font-face {
+  font-family: "Novecentosanswide-normal";
+  src: url("../inhabitant-assets/fonts/Novecento/Novecentosanswide-Normal.ttf"); }
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -415,6 +427,54 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
+#nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 8.5%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.site-title {
+  margin: 0;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 50px;
+  background: url("../../inhabitant-assets/images/logos/inhabitent-logo-tent-white.svg") no-repeat;
+  background-size: 50px 33px; }
+
+header {
+  width: 100%;
+  position: absolute; }
+
+.scroll-header {
+  position: fixed;
+  color: #248A83;
+  border-bottom: 1px solid #e1e1e1; }
+  .scroll-header a:visited {
+    color: #248A83; }
+  .scroll-header .site-title {
+    background: url("../../inhabitant-assets/images/logos/inhabitent-logo-tent.svg") no-repeat;
+    background-size: 50px 33px; }
+
+li {
+  text-transform: uppercase;
+  font-family: Novecentosanswide-normal;
+  padding-left: 20px; }
+
+#site-navigation {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content; }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -422,9 +482,9 @@ textarea {
 a {
   color: royalblue; }
   a:visited {
-    color: purple; }
+    color: white; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #f0e4d1; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -433,9 +493,12 @@ a {
 /* Menus */
 .main-navigation {
   clear: both;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   float: left;
-  width: 100%; }
+  width: 100%;
+  color: white; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -452,10 +515,13 @@ a {
       .main-navigation ul ul ul {
         left: -999rem;
         top: 0; }
-      .main-navigation ul ul li:hover > ul,
-      .main-navigation ul ul li.focus > ul {
-        left: 100%; }
+      .main-navigation ul ul li {
+        padding-left: 1.5rem; }
+        .main-navigation ul ul li:hover > ul,
+        .main-navigation ul ul li.focus > ul {
+          left: 100%; }
       .main-navigation ul ul a {
+        text-transform: uppercase;
         width: 200px; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
@@ -568,6 +634,27 @@ a {
 .widget_search .search-submit {
   display: none; }
 
+h3 {
+  color: orange;
+  margin-bottom: 0px; }
+
+.day {
+  color: white; }
+  .day span {
+    font-weight: bold; }
+
+span {
+  color: white;
+  font-weight: bold; }
+
+.hours {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.day {
+  margin-bottom: 0px; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -670,48 +757,116 @@ object {
 # Page Templates
 --------------------------------------------------------------*/
 /* Front page */
-#nav-bar {
+.home-hero {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), #969696 url(../../inhabitant-assets/images/home-hero.jpg) no-repeat top;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0.4)), #969696 url(../../inhabitant-assets/images/home-hero.jpg) no-repeat top;
+  background-size: cover,cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh; }
+
+.product-type-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 8.5%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: blue;
-  margin: 0 10%; }
+          justify-content: space-between; }
 
-.site-title {
-  margin: 0;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  width: 50px;
-  background: url("../../inhabitant-assets/images/logos/inhabitent-logo-tent-white.svg") no-repeat;
-  background-size: 50px 33px; }
+.product-type-wrapper {
+  border: 1px solid #e1e1e1;
+  border-top: 3px solid #e1e1e1;
+  width: 23%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px; }
+  .product-type-wrapper :hover .product-type-wrapper {
+    border: 1px solid #d99054;
+    border-top: 3px solid #d99054; }
+  .product-type-wrapper img {
+    width: 70px;
+    -ms-flex-item-align: center;
+        align-self: center; }
+  .product-type-wrapper #description {
+    color: #808080;
+    font-family: Merriweather-light;
+    text-align: center; }
+  .product-type-wrapper .button-container {
+    background: #248a83;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: Novecentosanswide-normal, sans-serif;
+    font-size: 14.4px;
+    font-size: .9rem;
+    line-height: 1;
+    padding: .75rem 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -ms-flex-item-align: center;
+        align-self: center; }
+    .product-type-wrapper .button-container :hover .button-container {
+      background: #17625D; }
+    .product-type-wrapper .button-container .button {
+      text-decoration: none;
+      color: white; }
+  .product-type-wrapper p {
+    margin-bottom: 0; }
 
-header {
-  width: 100%; }
-
-#site-navigation {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content; }
+.section-head {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin-bottom: 3.75rem;
+  text-align: center; }
 
 #colophon {
   background-image: url("../../inhabitant-assets/images/dark-wood@2x.png");
-  background-size: cover; }
-
-h4 {
-  color: orange; }
-
-h5 {
-  color: white; }
-
-i {
-  color: white; }
-
-#logo {
-  fill: white; }
+  background-size: 512px 512px;
+  padding-top: 55px;
+  font-family: Merriweather-light;
+  font-size: 1.2rem; }
+  #colophon h5 {
+    color: white; }
+  #colophon #mainFooterContainer {
+    margin: 0 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    #colophon #mainFooterContainer h3 {
+      margin: 0px;
+      color: #d99054;
+      text-transform: uppercase;
+      font-size: 1.2rem; }
+    #colophon #mainFooterContainer i {
+      color: white; }
+    #colophon #mainFooterContainer #logo {
+      width: 280px; }
+  #colophon .end-copyright {
+    text-align: center;
+    text-transform: uppercase; }

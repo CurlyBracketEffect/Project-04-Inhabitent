@@ -13,12 +13,12 @@
  * @copyright 2015 Your Name or Company Name
  *
  * @wordpress-plugin
- * Plugin Name:       @TODO
+ * Plugin Name:       Business-Hours-Widget
  * Plugin URI:        @TODO
- * Description:       @TODO
+ * Description:       Allow the site owner to change the store hours they display
  * Version:           1.0.0
- * Author:            @TODO
- * Author URI:        @TODO
+ * Author:            Jorrin Bruns
+ * Author URI:        https://github.com/CurlyBracketEffect/Project-04-Inhabitent
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -28,8 +28,33 @@ if ( ! defined ( 'ABSPATH' ) ) {
 	exit;
 }
 
+function check_for_page_tree() {
+ 
+    //start by checking if we're on a page
+    if( is_page() ) {
+     
+        global $post;
+     
+        // next check if the page has parents
+        if ( $post->post_parent ){
+         
+            // fetch the list of ancestors
+            $parents = array_reverse( get_post_ancestors( $post->ID ) );
+             
+            // get the top level ancestor
+            return $parents[0];
+             
+        }
+         
+        // return the id  - this will be the topmost ancestor if there is one, or the current page if not
+        return $post->ID;
+         
+    }
+ 
+}
+
 // TODO: change 'Widget_Name' to the name of your plugin
-class Widget_Name extends WP_Widget {
+class Business_Hours_Widget extends WP_Widget {
 
     /**
      * @TODO - Rename "widget-name" to the name your your widget
@@ -40,7 +65,7 @@ class Widget_Name extends WP_Widget {
      *
      * @var      string
      */
-    protected $widget_slug = 'widget-name';
+    protected $widget_slug = 'Business_Hours_Widget';
 
 	/*--------------------------------------------------*/
 	/* Constructor
@@ -54,10 +79,10 @@ class Widget_Name extends WP_Widget {
 		// TODO: update description
 		parent::__construct(
 			$this->get_widget_slug(),
-			'Widget Name',
+			'Business Hours Widget',
 			array(
 				'classname'  => $this->get_widget_slug().'-class',
-				'description' => 'Short description of the widget goes here.'
+				'description' => 'Use this widget to update the store hours that are visible on your site.'
 			)
 		);
 
@@ -98,6 +123,12 @@ class Widget_Name extends WP_Widget {
 
 		// Manipulate the widget's values based on their input fields
 		$title = empty( $instance['title'] ) ? '' : apply_filters( 'widget_title', $instance['title'] );
+
+		// ***not sure what this does
+		$mon_fri_hours = empty( $instance['mon_fri_hours'] ) ? '' : apply_filters( 'widget_title', $instance['mon_fri_hours'] );
+		$sat_hours = empty( $instance['sat_hours'] ) ? '' : apply_filters( 'widget_title', $instance['sat_hours'] );
+		$sun_hours = empty( $instance['sun_hours'] ) ? '' : apply_filters( 'widget_title', $instance['sun_hours'] );
+		 
 		// TODO: other fields go here...
 
 		ob_start();
@@ -127,6 +158,9 @@ class Widget_Name extends WP_Widget {
 		$instance = $old_instance;
 
 		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['mon_fri_hours'] = strip_tags( $new_instance['mon_fri_hours'] );
+		$instance['sat_hours'] = strip_tags( $new_instance['sat_hours'] );
+		$instance['sun_hours'] = strip_tags( $new_instance['sun_hours'] );
 		// TODO: Here is where you update the rest of your widget's old values with the new, incoming values
 
 		return $instance;
@@ -144,13 +178,21 @@ class Widget_Name extends WP_Widget {
 		$instance = wp_parse_args(
 			(array) $instance,
 			array(
-				'title' => 'My Widget Title',
+				'title' => 'Business Hours Widget',
+				'mon_fri_hours'=> '9am to 5pm',
+				'sat_hours'=>'10am to 2pm',
+				'sun_hours'=>'Closed'
 			)
 		);
 
 		$title = strip_tags( $instance['title'] );
-		// TODO: Store the rest of values of the widget in their own variables
+		$mon_fri_hours = strip_tags( $instance['mon_fri_hours'] );
+		$sat_hours = strip_tags( $instance['sat_hours'] );
+		$sun_hours = strip_tags( $instance['sun_hours'] );
 
+
+		// TODO: Store the rest of values of the widget in their own variables
+			
 		// Display the admin form
 		include( plugin_dir_path( __FILE__ ) . 'views/admin.php' );
 
@@ -160,5 +202,6 @@ class Widget_Name extends WP_Widget {
 
 // TODO: Remember to change 'Widget_Name' to match the class name definition
 add_action( 'widgets_init', function(){
-     register_widget( 'Widget_Name' );
+     register_widget( 'Business_Hours_Widget' );
 });
+?>

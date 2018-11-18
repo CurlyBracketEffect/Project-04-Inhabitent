@@ -12,6 +12,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 	<?php wp_head(); ?>
 	</head>
@@ -26,7 +29,7 @@
 					<a href="http://localhost:3000/wordpress/">
 					<h1 class= "site-title">Inhabitent</h1>	
 				</a>
-				<!-- <img id="logo-img" src="<?php echo get_template_directory_uri(); ?>/inhabitant-assets/images/logos/inhabitent-logo-tent-white.svg"/> -->
+				<!-- <?php echo get_template_directory_uri(); ?> -->
 				</div>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html( 'Primary Menu' ); ?></button>
@@ -34,5 +37,25 @@
 				</nav><!-- #site-navigation -->
 				</div>
 			</header><!-- #masthead -->
+
+			<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+			jQuery(function($) {
+				var $nav = $('header');
+				var $win = $(window);
+				var winH = $win.height(); // Get the window height.
+
+				$win.on("scroll", function () {
+						if ($(this).scrollTop() > winH ) {
+								$nav.addClass("scroll-header");
+						} else {
+								$nav.removeClass("scroll-header");
+						}
+				}).on("resize", function(){ // If the user resizes the window
+					winH = $(this).height(); // you'll need the new height value
+				});
+
+				});
+		</script>
 
 			<div id="content" class="site-content">

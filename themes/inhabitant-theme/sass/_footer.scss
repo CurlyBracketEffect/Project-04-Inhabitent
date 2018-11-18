@@ -1,17 +1,35 @@
 #colophon {
     background-image: url("../../inhabitant-assets/images/dark-wood@2x.png");
-    background-size: cover;
-   }
-   h4 {
-    color: orange;
-   }
-   h5 {
-    color: white;
-   }
-   i {
-    color: white;
+    background-size: 512px 512px;;
+    padding-top: 55px;
+    font-family: Merriweather-light;
+    font-size: 1.2rem;
+    h5 {
+        color: white;
+       }
+    #mainFooterContainer{
+        margin: 0 10%;
+        display: flex;
+        justify-content: space-between;
+        h3 {
+            margin: 0px;
+            color: #d99054;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+           }
+           
+           i {
+            color: white;
+           }
+           #logo{
+            width: 280px;
+           }
+       }
+    .end-copyright{
+        text-align: center;
+        text-transform: uppercase;
+    }
    }
 
-   #logo{
-       fill: white;
-   }
+   
+

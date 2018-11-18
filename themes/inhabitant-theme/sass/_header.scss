@@ -1,12 +1,13 @@
+
+
 #nav-bar{
     display: flex;
     justify-content: space-between;
-    background-color: blue;
-    margin: 0 10%;
+    margin: 0 8.5%;
+    align-items: center;
 }
 
 .site-title{
-    // height: 33px;
     margin: 0;
     overflow: hidden;
     text-indent: 100%;
@@ -18,20 +19,32 @@
 
 header{
     width: 100%;
-    // background-color: aqua;
+    position: absolute;
 }
+.scroll-header{
+    position: fixed;
+    color: #248A83;
+    border-bottom: 1px solid $light-grey;
+    a:visited{
+        color: #248A83;
+    }
+    .site-title{
+    background: url("../../inhabitant-assets/images/logos/inhabitent-logo-tent.svg") no-repeat;
+    background-size: 50px 33px;
+
+    }
+}
+
+li{
+    text-transform: uppercase;
+    font-family: $nova-norm;
+    padding-left: 20px;
+}
+
 
 #site-navigation{
     width: fit-content;
     height: fit-content;
-}
-
-#logo-container{
-    // height: 33px;
-}
-
-#logo-img{
-    // width: 50px;
 }
 
 // *{
