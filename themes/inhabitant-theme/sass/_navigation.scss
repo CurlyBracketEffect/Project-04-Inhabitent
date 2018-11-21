@@ -32,10 +32,6 @@ a {
 	float: left;
 	width: 100%;
 	color: white;
-
-	// a:visited{
-    //     color:white;
-    // }
 	ul {
 		display: none;
 		list-style: none;
@@ -140,3 +136,31 @@ a {
 		width: 50%;
 	}
 }
+
+.header-search {
+    line-height: 1;
+    fieldset {
+      border:none;
+      padding: 0;
+      .search-toggle {
+        float:left;
+        padding-top: 0.35rem;
+      }
+      label {
+        -webkit-transition: width 400ms ease, background 400ms ease;
+        transition: width 400ms ease, background 400ms ease;
+        float: left;
+        margin: 0;
+        input[type="search"] {
+          border: none;
+          background: transparent;
+          /* transition: width 3s; */
+          text-transform: uppercase;
+          font-family: $font__accent;
+            &:focus {
+              outline: none;
+            }
+        }
+      }
+    }
+  }

@@ -10,12 +10,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-        <h1><?php echo CFS()->get( 'name' ); ?></h1>
-        <?php echo CFS()->get( 'price' ); ?>
-        <img src =" <?php  echo CFS()->get( 'image' );  ?>">
-
-
-
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'template-parts/content', 'single' ); ?>
