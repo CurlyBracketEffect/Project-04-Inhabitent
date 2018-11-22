@@ -866,7 +866,8 @@ object {
   border-top: 3px solid #d99054; }
 
 .button-container:hover {
-  background: #17625D; }
+  background: #17625D;
+  color: #fff; }
 
 .section-head {
   text-transform: uppercase;
@@ -935,15 +936,19 @@ object {
         color: #fff;
         border: none; }
 
+#adventure-area {
+  margin-bottom: 60px; }
+
+.section-head {
+  color: #2f1339;
+  line-height: 1.25;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: Novecentosanswide-normal; }
+
 .adventure-container {
   margin: 0 7.7rem; }
-  .adventure-container h2 {
-    color: #2f1339;
-    line-height: 1.25;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-family: Novecento-Normal; }
-  .adventure-container ul {
+  .adventure-container .proper-list-adventure {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 2fr;
@@ -972,7 +977,7 @@ object {
       font-size: 1.4rem; }
     .adventure-container .adventure-entry:nth-child(4) {
       font-size: 1.4rem; }
-    .adventure-container .adventure-entry .adventure-wrapper img {
+    .adventure-container .adventure-entry .adventure-entry-wrapper .adventure-entry-pic {
       left: 50%;
       max-height: 620px;
       max-width: none;
@@ -982,7 +987,7 @@ object {
               transform: translate(-50%, -75%);
       width: auto;
       background: rgba(0, 0, 0, 0.35); }
-    .adventure-container .adventure-entry .adventure-wrapper:after {
+    .adventure-container .adventure-entry .adventure-entry-wrapper:after {
       background: rgba(0, 0, 0, 0.35);
       content: "";
       height: 100%;
@@ -1021,19 +1026,260 @@ object {
     background-color: #248a83;
     border: 1px solid #248a83;
     color: #FFF; }
-  .adventure-container .see-more {
+  .adventure-container .all-adventures {
     background-color: #248A83;
     padding: .75rem 1.5rem;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content; }
-    .adventure-container .see-more a {
+    .adventure-container .all-adventures a {
       font-size: 1.2rem;
       font-family: Novecentosanswide-normal;
       text-decoration: none;
       text-transform: uppercase; }
-    .adventure-container .see-more:hover {
+      .adventure-container .all-adventures a:hover {
+        color: #fff; }
+    .adventure-container .all-adventures:hover {
       background-color: #17625D; }
+
+.journal-header header {
+  position: fixed;
+  color: #248A83;
+  border-bottom: 1px solid #e1e1e1;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 5; }
+  .journal-header header a:visited {
+    color: #248A83; }
+  .journal-header header a:hover {
+    color: #2f1339; }
+  .journal-header header .site-title {
+    background: url("../../inhabitant-assets/images/logos/inhabitent-logo-tent.svg") no-repeat;
+    background-size: 50px 33px; }
+
+.content-sidebar-contatiner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.adventure-header header {
+  position: fixed;
+  color: #248A83;
+  border-bottom: 1px solid #e1e1e1;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 5; }
+  .adventure-header header a:visited {
+    color: #248A83; }
+  .adventure-header header a:hover {
+    color: #2f1339; }
+  .adventure-header header .site-title {
+    background: url("../../inhabitant-assets/images/logos/inhabitent-logo-tent.svg") no-repeat;
+    background-size: 50px 33px; }
+
+.adventure-content-area {
+  padding-top: 50px; }
+  .adventure-content-area .adventure-area {
+    margin: 0 7.7rem; }
+    .adventure-content-area .adventure-area h1 {
+      font-family: Novecentosanswide-bold;
+      color: #404040;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2.4rem;
+      letter-spacing: 2px;
+      border-bottom: 1px dashed #c8c8c8;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem; }
+    .adventure-content-area .adventure-area .adventure-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1.5rem;
+      margin-bottom: 4.5rem; }
+      .adventure-content-area .adventure-area .adventure-grid .adventure-grid-item {
+        position: relative; }
+        .adventure-content-area .adventure-area .adventure-grid .adventure-grid-item .shade {
+          overflow: hidden; }
+          .adventure-content-area .adventure-area .adventure-grid .adventure-grid-item .shade::after {
+            background: rgba(0, 0, 0, 0.35);
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1; }
+        .adventure-content-area .adventure-area .adventure-grid .adventure-grid-item .adventure-content {
+          position: absolute;
+          margin: 0 23px;
+          z-index: 9; }
+          .adventure-content-area .adventure-area .adventure-grid .adventure-grid-item .adventure-content a {
+            text-decoration: none; }
+          .adventure-content-area .adventure-area .adventure-grid .adventure-grid-item .adventure-content .entry-title {
+            font-family: Merriweather-light;
+            font-size: 48px;
+            font-size: 3rem;
+            font-weight: 400; }
+          .adventure-content-area .adventure-area .adventure-grid .adventure-grid-item .adventure-content .adventure-button {
+            border: 1px solid #fff;
+            color: #fff;
+            cursor: pointer;
+            font-family: Novecentosanswide-normal;
+            font-size: 14.4px;
+            font-size: .9rem;
+            line-height: 1;
+            padding: .75rem 1.5rem;
+            text-decoration: none;
+            text-transform: uppercase; }
+            .adventure-content-area .adventure-area .adventure-grid .adventure-grid-item .adventure-content .adventure-button:hover {
+              border: 1px solid #248A83;
+              background: #248A83; }
+
+.find-us-header header {
+  position: fixed;
+  color: #248A83;
+  border-bottom: 1px solid #e1e1e1;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 5; }
+  .find-us-header header a:visited {
+    color: #248A83; }
+  .find-us-header header a:hover {
+    color: #2f1339; }
+  .find-us-header header .site-title {
+    background: url("../../inhabitant-assets/images/logos/inhabitent-logo-tent.svg") no-repeat;
+    background-size: 50px 33px; }
+
+.flex-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 100px; }
+  .flex-wrapper .content-area {
+    padding-right: 5%;
+    border-right: 1px solid #e1e1e1; }
+    .flex-wrapper .content-area .page-title {
+      text-transform: uppercase;
+      font-family: Novecentosanswide-bold;
+      letter-spacing: 2px;
+      font-size: 2.4rem;
+      padding-top: 60px; }
+    .flex-wrapper .content-area .headings {
+      text-transform: uppercase;
+      color: #2f1339;
+      font-size: 2.1rem;
+      font-family: Novecentosanswide-bold;
+      letter-spacing: 2px; }
+    .flex-wrapper .content-area .blurb {
+      color: #404040;
+      line-height: 1.75;
+      font-family: Merriweather-light; }
+    .flex-wrapper .content-area .contact-form label {
+      color: #2f1339;
+      font-family: Novecentosanswide-normal;
+      font-size: 1.1rem;
+      margin-bottom: .5rem;
+      text-transform: uppercase; }
+    .flex-wrapper .content-area .contact-form .required {
+      color: #d99054; }
+    .flex-wrapper .content-area .contact-form input {
+      color: #666;
+      background-color: #f4f4f4;
+      border: 1px solid #e1e1e1; }
+    .flex-wrapper .content-area .contact-form textarea {
+      width: 100%;
+      color: #666;
+      background-color: #f4f4f4;
+      border: 1px solid #e1e1e1; }
+    .flex-wrapper .content-area .contact-form #submit {
+      background: #248a83;
+      border: none;
+      border-radius: 0;
+      color: #fff;
+      cursor: pointer;
+      font-family: Novecentosanswide-normal;
+      font-size: 14.4px;
+      font-size: .9rem;
+      line-height: 1;
+      padding: .75rem 1.5rem;
+      text-decoration: none;
+      text-transform: uppercase; }
+  .flex-wrapper .sidebar {
+    padding-top: 80px;
+    padding-left: 5%;
+    width: 49%; }
+    .flex-wrapper .sidebar h2 {
+      font-size: 1.5rem;
+      color: #2f1339;
+      line-height: 1.25;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: Novecentosanswide-bold; }
+    .flex-wrapper .sidebar h5 a {
+      font-size: 16px;
+      font-weight: none; }
+    .flex-wrapper .sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .flex-wrapper .sidebar ul li {
+        padding: 0; }
+    .flex-wrapper .sidebar a {
+      color: #248A83;
+      line-height: 1.75;
+      font-family: Merriweather-light;
+      text-transform: capitalize; }
+      .flex-wrapper .sidebar a:hover {
+        text-decoration: none;
+        color: #2f1339; }
+    .flex-wrapper .sidebar i {
+      margin-right: .5rem; }
+    .flex-wrapper .sidebar .day {
+      color: #404040;
+      font-family: Merriweather-light; }
+      .flex-wrapper .sidebar .day span {
+        font-weight: 700;
+        color: #404040; }
+
+.about-hero {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(https://tent.academy.red/wp-content/uploads/2016/04/about-hero.jpg) no-repeat center bottom;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(https://tent.academy.red/wp-content/uploads/2016/04/about-hero.jpg) no-repeat center bottom;
+  background-size: cover,cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .about-hero h1 {
+    color: white;
+    font-family: Novecentosanswide-bold;
+    font-size: 3rem;
+    text-transform: uppercase; }
+
+.about-content {
+  margin: 3% 22%;
+  margin-bottom: 5%; }
+  .about-content .section-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #2f1339;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    line-height: 1.25; }
+  .about-content .our-content {
+    font-family: Merriweather-light;
+    line-height: 1.75; }
 
 #colophon {
   background-image: url("../../inhabitant-assets/images/dark-wood@2x.png");
@@ -1063,3 +1309,9 @@ object {
   #colophon .end-copyright {
     text-align: center;
     text-transform: uppercase; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline;
+    color: #fff; }

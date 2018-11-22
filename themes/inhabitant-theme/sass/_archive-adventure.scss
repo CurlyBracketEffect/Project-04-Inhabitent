@@ -1,0 +1,93 @@
+.adventure-header{
+    header{
+        position: fixed;
+        color: #248A83;
+        border-bottom: 1px solid $light-grey;
+        background-color: hsla(0,0%,100%,.85);
+        z-index: 5;
+
+        a:visited{
+            color: #248A83;
+        }
+        a:hover{
+            color: $purple;
+        }
+        .site-title{
+        background: url("../../inhabitant-assets/images/logos/inhabitent-logo-tent.svg") no-repeat;
+        background-size: 50px 33px;
+    
+        }    
+    }
+}
+.adventure-content-area{
+    padding-top: 50px;
+    .adventure-area{
+        margin: 0 7.7rem;
+        h1{
+            font-family: $nova-bold;
+            color: $dark-grey;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 2.4rem;
+            letter-spacing: 2px;
+            border-bottom: 1px dashed #c8c8c8;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+        }
+        .adventure-grid{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 1.5rem;
+            margin-bottom: 4.5rem;
+            .adventure-grid-item{
+                position: relative;
+                 .shade{
+                    overflow: hidden;
+                     &::after{
+                        background: rgba(0,0,0,.35);
+                        position: absolute;
+                        content: "";
+                        height: 100%;
+                        width: 100%;
+                        left: 0;
+                        top: 0;
+                        z-index: 1;
+                    }
+                 }
+                .adventure-content{
+                    position: absolute;
+                    margin: 0 23px;
+                    z-index: 9;
+                    a{
+                        text-decoration: none;
+                    }
+                    .entry-title{
+                        font-family: $merri-light;
+                        font-size: 48px;
+                        font-size: 3rem;
+                        font-weight: 400;
+                    }
+                    .adventure-button{
+                        border: 1px solid #fff;
+                        color: #fff;
+                        cursor: pointer;
+                        font-family: $nova-norm;
+                        font-size: 14.4px;
+                        font-size: .9rem;
+                        line-height: 1;
+                        padding: .75rem 1.5rem;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        &:hover{
+                            border: 1px solid $green;
+                            background: $green;
+
+                        }
+                    }
+                }
+            }
+        }  
+    } 
+}
+
+

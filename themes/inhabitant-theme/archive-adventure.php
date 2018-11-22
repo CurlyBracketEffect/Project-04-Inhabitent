@@ -1,3 +1,4 @@
+<div class="adventure-header">
 <?php
 /**ALL ADVENTURES
  * The template for displaying archive pages.
@@ -6,36 +7,32 @@
  */
 
 get_header(); ?>
+</div>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area adventure-content-area">
 		<main id="main" class="site-main" role="main">
-        <h1>This is the Adventures Archive</h1>
-        <?php if ( have_posts() ) : ?>
+			<div class="adventure-area">
+				<h1>Latest Adventures</h1>
+				<div class="adventure-grid">
+					
+					<?php while ( have_posts() ) : the_post(); ?>
+						
+					
+						<div class="adventure-grid-item">
+						
+								<div class="adventure-content">
+									<a href = <?php echo get_permalink(get_the_ID()); ?> ><?php the_title('<h2 class="entry-title">', '</h2>'); ?> </a>
+									<a class= "adventure-button" href= <?php echo get_permalink(get_the_ID()); ?>>Read More</a>
+								</div>
+								<div class="shade">
+									<img src= "<?php echo CFS()->get('image'); ?> ">
+								</div>
+						</div>
+					
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					get_template_part( 'template-parts/content' );
-				?>
-
-			<?php endwhile; ?>
-
-			<?php the_posts_navigation(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-		<?php endif; ?>
-
+					<?php endwhile; ?>
+				</div>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

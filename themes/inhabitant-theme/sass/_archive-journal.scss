@@ -1,0 +1,32 @@
+.journal-header{
+    header{
+        position: fixed;
+        color: #248A83;
+        border-bottom: 1px solid $light-grey;
+        background-color: hsla(0,0%,100%,.85);
+        z-index: 5;
+
+        a:visited{
+            color: #248A83;
+        }
+        a:hover{
+            color: $purple;
+        }
+        .site-title{
+        background: url("../../inhabitant-assets/images/logos/inhabitent-logo-tent.svg") no-repeat;
+        background-size: 50px 33px;
+    
+        }    
+    }
+}
+
+.content-sidebar-contatiner{
+    display: flex;
+    justify-content: space-between;
+}
+
+// .entry-header{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+// }

@@ -23,7 +23,7 @@
 		<div id="page" class="hfeed site">
 			<a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( 'Skip to content' ); ?></a>
 
-			<header id="masthead" class="site-header" role="banner">
+			<header id="masthead" class=<?php echo (is_front_page() OR is_page( $page = 'about')) ? '"site-header reverse-header"' : "site-header scroll-header" ?> role="banner">
 				<div id="nav-bar" >
 				<div id="logo-container">	
 					<a href="http://localhost:3000/wordpress/">

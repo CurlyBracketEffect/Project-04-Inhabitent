@@ -4,6 +4,15 @@
  *
  * @package RED_Starter_Theme
  */
+?>
+
+	<div class="contact-info">
+        <h2>Contact Info</h2>  
+		<h5><i class="fa fa-phone"></i><a href="tel:7784567891"> 778-456-7891</a></h5>
+        <h5><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@inhabitent.com">  info@inhabitent.com</a></h5>		
+        <h5><i class="fa fa-map-marker"></i>1490 W Broadway<br>Vancouver, BC V6H 1H5</h5>
+    </div><!-- .contact-info -->
+<?php
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;

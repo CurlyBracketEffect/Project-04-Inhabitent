@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all pages.
- *
+ * <img src="../inhabitant-assets/images/home-hero.jpg" class="logo" alt="Inhabitent full logo">
  * @package RED_Starter_Theme
  */
 
@@ -10,7 +10,7 @@ get_header();?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<section class="home-hero">
-            <img src="https://tent.academy.red/wp-content/themes/inhabitent/images/inhabitent-logo-full.svg" class="logo" alt="Inhabitent full logo">
+            <img src="/wordpress/wp-content/themes/inhabitant-theme/inhabitant-assets/images/logos/inhabitent-logo-full.svg" class="logo" alt="Inhabitent full logo">
 		 </section>
 		 
      <!-- Shop stuff section -->
@@ -98,8 +98,8 @@ get_header();?>
            $post_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'large');
            ?>
              <li class="adventure-entry">
-                <div class = "adventure-wrapper">
-                    <img class = "entry-adventure-pic" src = <?php echo $post_image_url[0];  ?> >
+                <div class = "adventure-entry-wrapper">
+                    <img class = "adventure-entry-pic" src = <?php echo $post_image_url[0];  ?> >
                 
                     <div class = "adventure-info">
                  
@@ -114,7 +114,7 @@ get_header();?>
             </li>
        <?php } ?>
 	   </ul>
-	   <p class="see-more">
+	   <p class="all-adventures">
             <a href="http://localhost:8888/wordpress/adventures/" class="btn">More Adventures</a>
        </p>
    </div>

@@ -38,3 +38,9 @@ function my_login_logo_url_title() {
     return 'Your Site Name and Info';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+add_filter( 'getarchives_where', function ( $where )
+{
+    $where = str_replace( "post_type = 'post'", "post_type IN ( 'journal' )", $where );
+    return $where;
+});

@@ -30,6 +30,13 @@
         text-transform: uppercase;
     }
    }
+   a{
+       text-decoration: none;
+       &:hover{
+           text-decoration: underline;
+           color: #fff;
+       }
+   }
 
    
 
